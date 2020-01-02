@@ -11,11 +11,13 @@ public class BowlingGame {
         int frameIndex = 0;
 
         for (int frame = 0; frame < 10; frame++) {
-            if(isStrike(frameIndex)){
-                score += 10 + strikeBonus(frameIndex);
+            if(isLastFrame(frame)){
+                score += sumLastFrame(frameIndex);
+            } else if(isStrike(frameIndex)){
+                score += strikeBonus(frameIndex);
                 frameIndex++;
-            } else if(isSpare(frameIndex)){
-                score += 10 + spareBonus(frameIndex);
+            } else if(isSpare(frame)){
+                score += spareBonus(frameIndex);
                 frameIndex+=2;
             } else {
                 score += sumFrame(frameIndex);
@@ -26,23 +28,37 @@ public class BowlingGame {
         return score;
     }
 
+    private boolean isLastFrame(int frame) {
+        return frame == 9;
+    }
+
+    private int sumLastFrame(int frameIndex) {
+        int sum = sumFrame(frameIndex);
+
+        if(isSpare(frameIndex) || isStrike(frameIndex)) {
+            sum += rolls[frameIndex + 2];
+        }
+
+        return sum;
+    }
+
     private int sumFrame(int frameIndex) {
         return rolls[frameIndex] + rolls[frameIndex+1];
-    }
-
-    private int spareBonus(int frameIndex) {
-        return rolls[frameIndex+2];
-    }
-
-    private int strikeBonus(int frameIndex) {
-        return rolls[frameIndex + 1] + rolls[frameIndex + 2];
     }
 
     private boolean isStrike(int frameIndex) {
         return rolls[frameIndex] == 10;
     }
 
+    private int strikeBonus(int frameIndex) {
+        return 10 + rolls[frameIndex + 1] + rolls[frameIndex + 2];
+    }
+
     private boolean isSpare(int frameIndex) {
         return rolls[frameIndex] + rolls[frameIndex+1] == 10;
+    }
+
+    private int spareBonus(int frameIndex) {
+        return 10 + rolls[frameIndex + 2];
     }
 }

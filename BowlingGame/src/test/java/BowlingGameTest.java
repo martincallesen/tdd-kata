@@ -32,28 +32,47 @@ public class BowlingGameTest {
 
     @Test
     public void oneSpare() {
-        rollSpare();
+        game.roll(5);
+        game.roll(5);
         game.roll(3);
         rollMany(17, 0);
         assertThat("Score", game.score(), is(16));
     }
 
-    private void rollSpare() {
-        game.roll(5);
-        game.roll(5);
-    }
-
     @Test
     public void oneStrike() {
-        rollStrike();
+        game.roll(10);
         game.roll(3);
         game.roll(4);
         rollMany(16, 0);
         assertThat("Score", game.score(), is(24));
     }
 
-    private void rollStrike() {
+    @Test
+    public void lastTurnWithTwoRolls() {
+        rollMany(9, 10);
+        game.roll(3);
+        game.roll(4);
+
+        assertThat("Score", game.score(), is(257));
+    }
+
+    @Test
+    public void lastTurnWithSpare() {
+        rollMany(9, 10);
+        game.roll(3);
+        game.roll(7);
+        game.roll(3);
+        assertThat("Score", game.score(), is(266));
+    }
+
+    @Test
+    public void lastFrameWithStrike() {
+        rollMany(9, 10);
         game.roll(10);
+        game.roll(3);
+        game.roll(3);
+        assertThat("Score", game.score(), is(279));
     }
 
     @Test
