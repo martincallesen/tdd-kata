@@ -21,12 +21,14 @@ you know what to say. Your class has about 33 pupils and he might go round three
 breaktime. Next maths lesson is on Thursday. Get coding!
 
 # Task:
-Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number 
+Write a console program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number 
 and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
 ## Requirement 1
 When a number is divisible by 3 then Fizz should be printed
-| Number | Prints |
+
+| Number | Prints | 
+| ------ | ------ | 
 | 3      | Fizz   |
 | 6      | Fizz   |
 | 9      | Fizz   |
@@ -34,42 +36,52 @@ When a number is divisible by 3 then Fizz should be printed
 
 ## Requirement 2
 When a number is divisible by 5 then Buzz should be printed
-| Number | Prints |
+
+| Number | Prints | 
+| ------ | ------ | 
 | 5      | Buzz   |
 | 10     | Buzz   |
 | 20     | Buzz   |
 
 ## Requirement 3
 When a number is divisible by 3 and 5 then Fizzbuzz should be printed
-| Number | Prints     |
-| 15     | FizzBuzz   |
-| 30     | FizzBuzz   |
-| 45     | FizzBuzz   |
-| 60     | FizzBuzz   |
+
+| Number | Prints   | 
+| ------ | ------   | 
+| 15     | FizzBuzz |
+| 30     | FizzBuzz |
+| 45     | FizzBuzz |
+| 60     | FizzBuzz |
 
 ## Requirement 4
 Only print numbers from 1 to 100
-| Number | Prints     |
-| 0      |            |
-| 1      | 1          |
-| 101    |            |
 
-Sample output when all requirements is applied:
-| Number | Prints    |
-| 1     | 1          |
-| 2     | 2          |
-| 3     | Fizz       |
-| 4     | 4          |
-| 5     | Buzz       |
-| 6     | Fizz       |
-| 7     | 7          |
-| 8     | 8          |
-| 9     | Fizz       |
-| 10    | Buzz       |
-| 11    | 11         |
-| 12    | Fizz       |
-| 13    | 13         |
-| 14    | 14         |
-| 15    | FizzBuzz   |
+| Number | Prints  | 
+| ------ | ------  | 
+| 0      |         |
+| 1      | 1       |
+| 101    |         |
+
+
+## Sample output 
+when all requirements are applied output looks like this
+
+| Number | Prints   |
+| ------ | ------   | 
+| 1      | 1        |
+| 2      | 2        |
+| 3      | Fizz     |
+| 4      | 4        |
+| 5      | Buzz     |
+| 6      | Fizz     |
+| 7      | 7        |
+| 8      | 8        |
+| 9      | Fizz     |
+| 10     | Buzz     |
+| 11     | 11       |
+| 12     | Fizz     |
+| 13     | 13       |
+| 14     | 14       |
+| 15     | FizzBuzz |
 
 ... etc up to 100
