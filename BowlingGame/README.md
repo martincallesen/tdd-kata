@@ -8,11 +8,13 @@ eventually a pressure to compose additional units.
 This Kata is designed to be used with BottomUp approach [[Detroit-school TDD]].
 
 Scoring example:
---------------------------------------------------------------------------------------
-| |1,4|4,5|6,4|5,5|10|0,1|7,3|6,4|10 |2,8,6|                                         |  
-| |5  |14 |29 |49 |60|61 |77 |97 |117|133  |                                         |  
---------------------------------------------------------------------------------------
-The game consists of 10 frames as shown above.  In each frame the player has
+
+------| Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+Pins  | 1, 4     | 4, 5    |  6, 7    |  5, 5    |  10      |  0, 1    |  7, 3    |  6, 4    |  10      |  2, 8, 6  | 
+Score | 5        | 14      |  29      |  49      |  60      |  61      |  77      |  97      |  117     |  133      | 
+
+The game consists of 10 frames as shown above. In each frame the player has
 two opportunities to knock down 10 pins.  The score for the frame is the total
 number of pins knocked down, plus bonuses for strikes and spares.
 
@@ -28,7 +30,7 @@ In the tenth frame a player who rolls a spare or strike is allowed to roll the e
 balls to complete the frame.  However no more than three balls can be rolled in
 tenth frame.
 
-If you want to test our some games you can try https://www.bowlinggenius.com/
+If you want to manually test some games you can try https://www.bowlinggenius.com/
 
 ## Requirement 1
 
