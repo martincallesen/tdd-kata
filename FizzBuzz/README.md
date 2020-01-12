@@ -21,7 +21,7 @@ you know what to say. Your class has about 33 pupils and he might go round three
 breaktime. Next maths lesson is on Thursday. Get coding!
 
 # Task:
-Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number 
+Write a program that in console prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number 
 and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
 ## Requirement 1
