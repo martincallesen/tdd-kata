@@ -9,10 +9,10 @@ This Kata is designed to be used with BottomUp approach [[Detroit-school TDD]].
 
 Scoring example:
 
-------| Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
------ | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
-Pins  | 1, 4     | 4, 5    |  6, 7    |  5, 5    |  10      |  0, 1    |  7, 3    |  6, 4    |  10      |  2, 8, 6  | 
-Score | 5        | 14      |  29      |  49      |  60      |  61      |  77      |  97      |  117     |  133      | 
+| ------| Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 1, 4     | 4, 5    |  6, 1    |  5, 5    |  10      |  0, 1    |  7, 3    |  4, 6    |  10      |  2, 8, 6  | 
+| Score | 5        | 14      |  21      |  41      |  52      |  53      |  67      |  87      |  107     |  123      | 
 
 The game consists of 10 frames as shown above. In each frame the player has
 two opportunities to knock down 10 pins.  The score for the frame is the total
@@ -34,70 +34,66 @@ If you want to manually test some games you can try https://www.bowlinggenius.co
 
 ## Requirement 1
 
-### Example Gutter Game:
-given 20 rolls is scoring 0
-when score is calculated, 
-then score is 0
+### All rolls goes to the gutter:
+
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 0, 0     | 0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0     | 
+| Score | 0        | 0       |  0       |  0       |  0       |  0       |  0       |  0       |  0       |  0        | 
 
 ## Requirement 2
 
-### Example All One:
-given 20 rolls is scoring 1
-when score is calculated, 
-then score is 20
+### All rolls knocks down 1 pin:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 1, 1     | 1, 1    |  1, 1    |  1, 1    |  1, 1    |  1, 1    |  1, 1    |  1, 1    |  1, 1    |  1, 1     | 
+| Score | 2        | 4       |  6       |  8       |  10      |  12      |  14      |  16      |  18      |  20       | 
 
 ## Requirement 3
 
-### Example One Spare:
-given a roll scoring 5,
-given a roll scoring 5, //Spare
-given a roll scoring 3,
-given 17 rolls is scoring 0,
-when score is calculated, 
-then score is 16
+### Round 1 has One Spare and Round 2 knocks down 3 pins and the rest is zero:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 5, 5     | 3,0     |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0     | 
+| Score | 13       | 16      |  16       |  16     |  16      |  16      |  16      |  16      |  16      |  16       | 
 
 ## Requirement 4
 
-### Example One Strike:
-given a roll scoring 10, //Strike
-given a roll scoring 3, 
-given a roll scoring 4,
-given 16 rolls is scoring 0,
-when score is calculated, 
-then score is 24
+### Round 1 has One Strike and Round 2 knocks down 3 pins + 4 pins and the rest is zero:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 10       | 3,4     |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0    |  0, 0     | 
+| Score | 17       | 24      |  24      |  24      |  24      |  24      |  24      |  24      |  24      |  24       | 
 
 ## Requirement 5
 
 ### Example Two rolls in last turn:
-given 9 rolls is scoring 10,
-given a roll scoring 3, 
-given a roll scoring 4,
-when score is calculated, 
-then score is 257
+### Round 1 to Round 9 has One Strike and Round 10 knocks down 3 pins + 4 pins:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 10       | 10      |  10      |  10      |  10      |  10      |  10      |  10      |  10      |  3, 4     | 
+| Score | 30       | 60      |  90      |  120     |  150     |  180     |  210     |  240     |  250     |  257      | 
 
 ## Requirement 6
 
-### Example One Spare in last turn:
-given 9 rolls is scoring 10,
-given a roll scoring 3, 
-given a roll scoring 7,
-given a roll scoring 3,
-when score is calculated, 
-then score is 266
+### Round 1 to Round 9 has One Strike and Round 10 knocks down spare and 3 pins:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 10       | 10      |  10      |  10      |  10      |  10      |  10      |  10      |  10      |  3, 7, 3  | 
+| Score | 30       | 60      |  90      |  120     |  150     |  180     |  210     |  233     |  253     |  266      | 
 
 ## Requirement 7
 
-### Example One Strike in last turn:
-given 9 rolls is scoring 10,
-given a roll scoring 10, 
-given a roll scoring 3,
-given a roll scoring 3,
-when score is calculated, 
-then score is 279
+### Round 1 to Round 9 has One Strike and Round 10 knocks down strike, 3 pins and then 3 pins:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10 | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------  | 
+| Pins  | 10       | 10      |  10      |  10      |  10      |  10      |  10      |  10      |  10      |  10, 3, 3 | 
+| Score | 30       | 60      |  90      |  120     |  150     |  180     |  210     |  233     |  263     |  279      | 
 
 ## Requirement 8
 
-### Example Perfect game:
-given 12 rolls is scoring 10,
-when score is calculated, 
-then score is 300
+### Perfect game:
+| ----- | Round 1  | Round 2 |  Round 3 |  Round 4 |  Round 5 |  Round 6 |  Round 7 |  Round 8 |  Round 9 |  Round 10   | 
+| ----- | -------- | ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  ------- |  -------    | 
+| Pins  | 10       | 10      |  10      |  10      |  10      |  10      |  10      |  10      |  10      |  10, 10, 10 | 
+| Score | 30       | 60      |  90      |  120     |  150     |  180     |  210     |  240     |  270     |  300        | 
