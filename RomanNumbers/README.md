@@ -10,7 +10,9 @@ This Kata is designed to be used with BottomUp approach [[Detroit-school TDD]].
 ## Requirement 1
 
 Convert Single Roman Numbers to Arabic number
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | I           | 1            |
 | V           | 5            |
 | X           | 10           |
@@ -22,7 +24,9 @@ Convert Single Roman Numbers to Arabic number
 ## Requirement 2
 
 Convert Repeated Roman Numbers to Arabic number
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | II          | 2            |
 | XX          | 20           |
 | III         | 3            |
@@ -31,7 +35,9 @@ Convert Repeated Roman Numbers to Arabic number
 ## Requirement 3
 
 Convert Roman Numbers that can be replaced by another roman number should result in error
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | IIIII       | ERROR        |
 | XXXXX       | ERROR        |
 | DD          | ERROR        |
@@ -40,7 +46,9 @@ Convert Roman Numbers that can be replaced by another roman number should result
 ## Requirement 4
 
 Convert Multiple Roman Numbers to Arabic number
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | XV          | 15           |
 | CLX         | 160          |
 
@@ -48,7 +56,9 @@ Convert Multiple Roman Numbers to Arabic number
 ## Requirement 5
 
 Convert Multiple Roman Numbers With Subtractive Notation to Arabic number
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | IV          | 4            |
 | IX          | 9            |
 | XL          | 40           |
@@ -59,5 +69,7 @@ Convert Multiple Roman Numbers With Subtractive Notation to Arabic number
 ## Requirement 6
 
 Convert larger Roman Numbers 
+
 | RomanNumber | ArabicNumber |
+| ----------- | ------------ | 
 | MMMMCMXCIX  | 4999         |
