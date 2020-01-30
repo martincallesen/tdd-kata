@@ -2,6 +2,15 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'idea'
+    id "org.sonarqube" version "2.8"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "martincallesen_tdd-kata"
+        property "sonar.organization", "martincallesen"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 sourceCompatibility = 1.8
